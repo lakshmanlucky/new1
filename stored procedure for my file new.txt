@@ -1,0 +1,8 @@
+Create procedure USP_GetAllEmployees 1  
+@DeptId Int = NUll  
+as  
+Begin  
+ Select E.Id,   E.Name, E.Gender,   E.Salary,   E.DeptId  
+ From Mas_Employee E  
+ Where E.DeptId = ISNULL(@DeptId, DeptId)  
+End
